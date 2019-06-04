@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SystemClock.sleep(2000); 
         setContentView(R.layout.activity_main);
 
         dbHelper = new DBHelper(this);
@@ -71,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 final EditText editText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
                         .setTitle("Add new item")
-                        .setMessage("What's next?")
                         .setView(editText)
                         .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                             @Override
